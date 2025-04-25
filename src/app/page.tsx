@@ -58,7 +58,7 @@ const ComicSonic: React.FC = () => {
       const formData = new FormData();
       formData.append("file", file);
 
-      const response = await fetch("http://localhost:5000/api/upload", {
+      const response = await fetch("http://18.144.133.60/api/upload", {
         method: "POST",
         body: formData,
       });
@@ -82,7 +82,7 @@ const ComicSonic: React.FC = () => {
       }
     } catch (err) {
       console.error("Error uploading file:", err);
-      alert("An error occurred. Please try again.");
+      alert("An error occurteal. Please try again.");
     } finally {
       setIsUploading(false);
       setFile(null);
@@ -93,7 +93,7 @@ const ComicSonic: React.FC = () => {
   };
 
   return (
-    <div className="bg-gradient-to-b from-blue-900 to-purple-800 min-h-screen text-white flex flex-col items-center relative overflow-hidden">
+    <div className="w-screen bg-[url('/gtm.jpg')] bg-cover bg-center bg-no-repeat min-h-screen text-white flex flex-col items-center relative overflow-hidden">
       {/* Comic dots background */}
       <div className="absolute inset-0 opacity-10 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1IiBoZWlnaHQ9IjUiPgo8cmVjdCB3aWR0aD0iNSIgaGVpZ2h0PSI1IiBmaWxsPSIjMDAwMDAwIj48L3JlY3Q+CjxwYXRoIGQ9Ik0wIDVMNSAwWk02IDRMNCA2Wk0tMSAxTDEgLTFaIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS13aWR0aD0iMSI+PC9wYXRoPgo8L3N2Zz4=')]"></div>
 
@@ -105,7 +105,7 @@ const ComicSonic: React.FC = () => {
           animate={{ opacity: 0, scale: 3 }}
           transition={{ duration: 0.8 }}
         >
-          <span className="text-9xl font-extrabold text-yellow-400 stroke-black stroke-2">
+          <span className="text-9xl font-extrabold text-teal-400 stroke-black stroke-2">
             POW!
           </span>
         </motion.div>
@@ -118,7 +118,7 @@ const ComicSonic: React.FC = () => {
           animate={{ y: 0 }}
           transition={{ type: "spring", stiffness: 300 }}
         >
-          <span className="text-yellow-400">COMIC</span>
+          <span className="text-teal-400">COMIC</span>
           <span className="text-white">SONIC</span>
         </motion.div>
       </nav>
@@ -130,7 +130,7 @@ const ComicSonic: React.FC = () => {
           transition={{ delay: 0.3 }}
           className="text-center mb-12"
         >
-          <h1 className="text-5xl font-comic font-bold mb-4 text-yellow-400">
+          <h1 className="text-5xl font-comic font-bold mb-4 text-teal-400">
             COMIC-TO-AUDIO PROTOTYPE
           </h1>
           <p className="text-xl max-w-2xl">
@@ -148,7 +148,7 @@ const ComicSonic: React.FC = () => {
         />
 
         <motion.div
-          className="border-8 border-dashed border-yellow-400 p-12 rounded-3xl bg-white bg-opacity-10 shadow-comic-xl w-full max-w-2xl text-center cursor-pointer relative overflow-hidden"
+          className="p-12 rounded-3xl shadow-comic-xl w-full max-w-2xl text-center cursor-pointer relative overflow-hidden"
           onDragOver={(e) => e.preventDefault()}
           onDrop={handleDrop}
           whileHover={{ scale: 1.02 }}
@@ -164,7 +164,7 @@ const ComicSonic: React.FC = () => {
               className="flex flex-col items-center"
             >
               <div className="text-6xl mb-4">📚</div>
-              <h3 className="text-3xl font-comic font-bold text-yellow-400 mb-2">
+              <h3 className="text-3xl font-comic font-bold text-teal-400 mb-2">
                 {file.name}
               </h3>
               <p className="text-lg">
@@ -181,8 +181,7 @@ const ComicSonic: React.FC = () => {
               transition={{ duration: 0.5 }}
               className="flex flex-col items-center"
             >
-              <div className="text-8xl mb-6">🦹</div>
-              <h3 className="text-3xl font-comic font-bold text-blue-950 mb-6">
+              <h3 className="text-3xl font-comic font-bold text-blue-100 mb-6">
                 DROP YOUR COMIC HERE
               </h3>
               <p className="text-xl mb-2">or click to browse files</p>
@@ -196,7 +195,7 @@ const ComicSonic: React.FC = () => {
         {file && (
           <motion.button
             onClick={handleUpload}
-            className="mt-12 px-12 py-4 bg-yellow-500 text-black rounded-full shadow-comic-xl hover:bg-yellow-400 text-2xl font-comic font-bold relative overflow-hidden"
+            className="mt-12 px-12 py-4 bg-teal-500 text-black rounded-full shadow-comic-xl hover:bg-teal-400 text-2xl font-comic font-bold relative overflow-hidden"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             transition={{ duration: 0.2 }}
@@ -255,17 +254,17 @@ const ComicSonic: React.FC = () => {
             }}
           >
             <div className="text-4xl mb-4">✨</div>
-            <div className="text-2xl font-comic text-yellow-300">
+            <div className="text-2xl font-comic text-teal-300">
               Crafting your sonic comic experience!
             </div>
           </motion.div>
         )}
       </main>
 
-      <footer className="w-full bg-black bg-opacity-80 py-6 text-center text-yellow-400 font-comic text-lg mt-12">
+      <footer className="w-full bg-black bg-opacity-80 py-6 text-center text-teal-400 font-comic text-lg mt-12">
         <p>
           © {new Date().getFullYear()}{" "}
-          <span className="text-yellow-400">COMICSONIC</span> - Where ink meets
+          <span className="text-teal-400">COMICSONIC</span> - Where ink meets
           audio
         </p>
         <p className="text-sm mt-2 font-sans">
