@@ -58,7 +58,7 @@ const ComicSonic: React.FC = () => {
       const formData = new FormData();
       formData.append("file", file);
 
-      const response = await fetch("http://54.151.101.83/api/upload", {
+      const response = await fetch("https://comicsonicbackend.online/api/upload", {
         method: "POST",
         body: formData,
       });
